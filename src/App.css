@@ -1,0 +1,124 @@
+/* ===== CSS variables ===== */
+:root {
+  --red: #ce1126;
+  --black: #000;
+  --grey: #4a4a4a;
+  --light: #f5f5f5;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Make the React root take full viewport width */
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+/* ===== Reset & base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  color: var(--grey);
+  background: #fff;
+  line-height: 1.6;
+}
+h1,
+h2,
+h3 {
+  font-family: "Cairo", sans-serif;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ===== Header ===== */
+header {
+  background: #fff;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header img.logo {
+  height: 60px;
+  object-fit: cover;
+}
+nav a {
+  color: #000;
+  margin-left: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  nav a {
+    margin: 0.3rem 0;
+  }
+}
+
+/* ===== Hero ===== */
+.hero-img {
+  width: 100%;
+  display: block;
+  margin-bottom: -5px;
+
+  object-fit: contain;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.card img.product {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  background: var(--red);
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--black);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
