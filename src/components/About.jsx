@@ -2,9 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
-    <section id="about" className="section">
+    <section
+      id="about"
+      className="section"
+      style={{ textAlign: i18n.language === "ar" ? "right" : "left" }}>
       <h2>{t("about")}</h2>
       <p>
         <strong style={{ color: "var(--red)" }}>{t("alyarmouk")}</strong>

@@ -27,13 +27,16 @@ const sectors = (t) => {
 };
 
 export default function Sectors() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <section
       id="sectors"
       className="section"
-      style={{ background: "var(--light)" }}>
-      <h2>Sectors We Serve</h2>
+      style={{
+        background: "var(--light)",
+        textAlign: i18n.language === "ar" ? "right" : "left",
+      }}>
+      <h2 style={{ marginBottom: "2rem" }}>{t("sectors")}</h2>
       <div className="grid">
         {sectors(t).map((s) => (
           <div key={s.title}>

@@ -27,9 +27,12 @@ const products = (t) => {
 };
 
 export default function Products() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
-    <section id="products" className="section">
+    <section
+      id="products"
+      className="section"
+      style={{ textAlign: i18n.language === "ar" ? "right" : "left" }}>
       <h2>{t("products")}</h2>
       <div className="grid">
         {products(t).map((p) => (
