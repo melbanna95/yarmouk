@@ -11,7 +11,8 @@ export default function About() {
       <h2>{t("about")}</h2>
       <p>
         <strong style={{ color: "var(--red)" }}>{t("alyarmouk")}</strong>
-        {t("aboutText")}
+        <br />
+        <span dangerouslySetInnerHTML={{ __html: t("aboutText") }} />
       </p>
       <div className="grid" style={{ marginTop: "2rem", textAlign: "center" }}>
         <div>
