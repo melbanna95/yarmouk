@@ -5,6 +5,25 @@
   --grey: #4a4a4a;
   --light: #f5f5f5;
 }
+
+/* ===== RTL Support for Arabic ===== */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] nav a {
+  margin-right: 1.2rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .card {
+  text-align: right;
+}
+
+[dir="rtl"] .btn {
+  direction: rtl;
+}
+
 html,
 body {
   margin: 0;
@@ -17,6 +36,7 @@ body {
   width: 100vw;
   min-height: 100vh;
 }
+
 /* ===== Reset & base ===== */
 * {
   margin: 0;
@@ -24,11 +44,13 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
 body {
   color: var(--grey);
   background: #fff;
   line-height: 1.6;
 }
+
 h1,
 h2,
 h3 {
@@ -45,21 +67,51 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  min-height: 80px;
 }
+
 header img.logo {
   height: 60px;
   object-fit: cover;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 nav a {
   color: #000;
   margin-left: 1.2rem;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
-@media (max-width: 600px) {
-  nav a {
-    margin: 0.3rem 0;
-  }
+
+nav a:hover {
+  color: var(--red);
+}
+
+/* ===== Mobile Navigation ===== */
+.mobile-menu-btn {
+  display: none !important;
+}
+
+.hamburger-line {
+  transition: all 0.3s linear;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* ===== Hero ===== */
@@ -67,7 +119,6 @@ nav a {
   width: 100%;
   display: block;
   margin-bottom: -5px;
-
   object-fit: contain;
 }
 
@@ -77,11 +128,13 @@ nav a {
   max-width: 1100px;
   margin: auto;
 }
+
 .grid {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
+
 .card {
   border: 1px solid #e0e0e0;
   border-radius: 4px;
@@ -89,10 +142,12 @@ nav a {
   text-align: center;
   transition: 0.3s;
 }
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
 .card img.product {
   height: 160px;
   width: 100%;
@@ -112,6 +167,11 @@ nav a {
   text-decoration: none;
   display: inline-block;
   margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #a50f1f;
 }
 
 /* ===== Footer ===== */
@@ -121,4 +181,310 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
+}
+
+/* ===== Responsive Media Queries ===== */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+  .section {
+    padding: 3rem 1rem;
+    max-width: 900px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  header {
+    padding: 0.5rem 2rem;
+  }
+
+  nav {
+    gap: 1.2rem;
+  }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 1rem;
+    max-width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  header {
+    padding: 0.5rem 1rem;
+    flex-direction: row;
+    gap: 1rem;
+    min-height: auto;
+  }
+
+  header img.logo {
+    height: 50px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+}
+
+/* Large Mobile Devices */
+@media (max-width: 600px) {
+  .section {
+    padding: 2rem 0.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .card img.product {
+    height: 140px;
+  }
+
+  header {
+    padding: 0.5rem 0.8rem;
+    position: relative;
+  }
+
+  header img.logo {
+    height: 45px;
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* Hide desktop navigation */
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  nav.nav-menu-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+}
+
+/* Medium Mobile Devices */
+@media (max-width: 480px) {
+  .section {
+    padding: 1.5rem 0.6rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card img.product {
+    height: 120px;
+  }
+
+  header {
+    padding: 0.4rem 0.6rem;
+  }
+
+  header img.logo {
+    height: 40px;
+  }
+
+  nav {
+    padding: 0.8rem;
+  }
+
+  nav a {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 360px) {
+  .section {
+    padding: 1.2rem 0.5rem;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+
+  .card img.product {
+    height: 100px;
+  }
+
+  header {
+    padding: 0.3rem 0.5rem;
+  }
+
+  header img.logo {
+    height: 35px;
+  }
+
+  nav {
+    padding: 0.6rem;
+  }
+
+  nav a {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+}
+
+/* Landscape Mobile Devices */
+@media (max-width: 768px) and (orientation: landscape) {
+  header {
+    flex-direction: row;
+    min-height: 60px;
+  }
+
+  header img.logo {
+    height: 45px;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  header img.logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header,
+  footer,
+  .btn {
+    display: none;
+  }
+
+  .section {
+    padding: 1rem 0;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
 }

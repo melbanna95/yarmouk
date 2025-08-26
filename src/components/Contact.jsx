@@ -1,6 +1,6 @@
 import React from "react";
-import banner from "../assets/banner-img-6-scaled.jpg";
 import { useTranslation } from "react-i18next";
+import logo from "../assets/logo.jpeg";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -9,7 +9,7 @@ export default function Contact() {
       id="contact"
       className="section"
       style={{
-        background: `url(${banner}) center/cover`,
+        background: `url(${logo}) center/cover`,
         color: "#fff",
         position: "relative",
       }}>
