@@ -1,7 +1,9 @@
 import React from "react";
 import banner from "../assets/banner-img-6-scaled.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <section
       id="contact"
@@ -19,15 +21,15 @@ export default function Contact() {
           padding: "4rem 1rem",
           textAlign: "center",
         }}>
-        <h2 style={{ color: "#fff" }}>Get in Touch</h2>
-        <p>Mit-Name, Qalyubia Governorate, Egypt</p>
+        <h2 style={{ color: "#fff" }}>{t("contact")}</h2>
+        <p>{t("mitNama")}</p>
         <a
           href="https://wa.me/201044302239"
           className="btn"
           style={{ fontSize: "1.2rem" }}
           target="_blank"
           rel="noopener noreferrer">
-          📲 WhatsApp 01044 302 239
+          {t("whatsapp")}
         </a>
       </div>
     </section>

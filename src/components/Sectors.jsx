@@ -1,29 +1,33 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const sectors = [
-  {
-    icon: "🔧",
-    title: "Construction",
-    text: "Structural beams, rebar, steel plates",
-  },
-  {
-    icon: "🚗",
-    title: "Automotive",
-    text: "Body panels, chassis, engine mounts",
-  },
-  {
-    icon: "🏭",
-    title: "Fabrication",
-    text: "Machine frames, fixtures, enclosures",
-  },
-  {
-    icon: "⚡",
-    title: "Energy",
-    text: "Oil & gas pipelines, wind towers, solar frames",
-  },
-];
+const sectors = (t) => {
+  return [
+    {
+      icon: "🔧",
+      title: t("construction"),
+      text: t("constructionText"),
+    },
+    {
+      icon: "🚗",
+      title: t("automotive"),
+      text: t("automotiveText"),
+    },
+    {
+      icon: "🏭",
+      title: t("fabrication"),
+      text: t("fabricationText"),
+    },
+    {
+      icon: "⚡",
+      title: t("energy"),
+      text: t("energyText"),
+    },
+  ];
+};
 
 export default function Sectors() {
+  const { t } = useTranslation();
   return (
     <section
       id="sectors"
@@ -31,7 +35,7 @@ export default function Sectors() {
       style={{ background: "var(--light)" }}>
       <h2>Sectors We Serve</h2>
       <div className="grid">
-        {sectors.map((s) => (
+        {sectors(t).map((s) => (
           <div key={s.title}>
             <h3>
               {s.icon} {s.title}
