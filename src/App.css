@@ -151,8 +151,10 @@ nav a:hover {
 .card img.product {
   height: 160px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 1rem;
+  border-radius: 4px;
+  background: #f8f8f8;
 }
 
 /* ===== Buttons ===== */
@@ -197,6 +199,10 @@ footer {
     gap: 1.5rem;
   }
 
+  .card img.product {
+    height: 180px;
+  }
+
   header {
     padding: 0.5rem 2rem;
   }
@@ -216,6 +222,10 @@ footer {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+  }
+
+  .card img.product {
+    height: 200px;
   }
 
   header {
@@ -269,7 +279,12 @@ footer {
   }
 
   .card img.product {
-    height: 140px;
+    height: 220px;
+    object-fit: contain;
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto 1rem auto;
+    display: block;
   }
 
   header {
@@ -356,7 +371,12 @@ footer {
   }
 
   .card img.product {
-    height: 120px;
+    height: 200px;
+    object-fit: contain;
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto 1rem auto;
+    display: block;
   }
 
   header {
@@ -405,7 +425,12 @@ footer {
   }
 
   .card img.product {
-    height: 100px;
+    height: 180px;
+    object-fit: contain;
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto 1rem auto;
+    display: block;
   }
 
   header {
